@@ -2,8 +2,6 @@
 
 A sleek, dark-themed task management dashboard built with React. Organize your work by priority, category, and due date with an intuitive sidebar navigation and real-time stats overview.
 
-![React](https://img.shields.io/badge/React-19.2.5-61DAFB?logo=react)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ---
 
@@ -160,11 +158,5 @@ All design tokens are CSS custom properties defined in the `css` template string
 
 ---
 
-## License
 
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Built with React and attention to detail.
 
