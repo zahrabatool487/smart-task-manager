@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+# Taskwise — Smart Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sleek, dark-themed task management dashboard built with React. Organize your work by priority, category, and due date with an intuitive sidebar navigation and real-time stats overview.
+
+![React](https://img.shields.io/badge/React-19.2.5-61DAFB?logo=react)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+---
+
+## Features
+
+- **Smart Views** — Filter tasks by All, Today, Pending, Completed, or Overdue
+- **Category Organization** — Group tasks into Work, Personal, Health, Learning, and Finance
+- **Priority Levels** — Assign High, Medium, or Low priority with color-coded badges
+- **Due Date Tracking** — Visual overdue warnings and friendly date formatting
+- **Real-time Stats** — Dashboard counters for total, completed, in-progress, and overdue tasks
+- **Search & Sort** — Instantly find tasks and sort by date, priority, or name
+- **Full CRUD** — Create, read, update, and delete tasks with a polished modal form
+- **Dark UI** — Elegant dark theme with warm accent colors and smooth animations
+- **Responsive** — Adapts to smaller screens with adjusted layouts
+- **Seed Data** — Pre-loaded demo tasks so you can explore immediately
+
+---
+
+## Preview
+
+The app features a two-column layout:
+
+- **Left Sidebar** — Navigation between views and category filters with live task counts
+- **Main Panel** — Top search bar, stats strip, and scrollable task list with quick actions
+
+Clicking a task's checkbox marks it complete. Use the ✎ icon to edit and ✕ to delete.
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| React 19 | UI library with Hooks (useState, useMemo, useEffect) |
+| CSS3 | Custom design system with CSS variables, Grid, Flexbox, and keyframe animations |
+| Google Fonts | DM Sans & DM Serif Display typography |
+| Create React App | Build tooling and development server |
+
+No external UI frameworks — everything is hand-crafted CSS for full control.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- npm (comes with Node.js)
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/smart-task-manager.git
+   cd smart-task-manager
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
+
+   The app will open at [http://localhost:3000](http://localhost:3000).
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Script | Description |
+|--------|-------------|
+| `npm start` | Runs the app in development mode with hot reload |
+| `npm test` | Launches the test runner in interactive watch mode |
+| `npm run build` | Builds the app for production to the `build` folder |
+| `npm run eject` | Ejects from Create React App (one-way operation) |
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+smart-task-manager/
+├── public/
+│   ├── index.html
+│   └── ...                 # Static assets
+├── src/
+│   ├── App.js              # Main application component (all logic + styles)
+│   ├── App.css             # (unused — styles are injected via JS)
+│   ├── index.js            # React root entry
+│   └── ...                 # Setup and utility files
+├── package.json
+└── README.md
+```
 
-### `npm test`
+> **Note:** All component logic, state management, and styles live in `src/App.js` for simplicity in this demo project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Usage Guide
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Managing Tasks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Action | How |
+|--------|-----|
+| **Add Task** | Click "+ New Task" in the top bar, fill the form, and save |
+| **Edit Task** | Click the ✎ icon on any task card |
+| **Complete** | Click the circle checkbox on a task card |
+| **Delete** | Click the ✕ icon on a task card |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Filtering & Sorting
 
-### `npm run eject`
+- **Sidebar Views** — Switch between All, Today, Pending, Completed, and Overdue
+- **Categories** — Click a category in the sidebar to filter by Work, Personal, Health, Learning, or Finance
+- **Search** — Type in the top search bar to find tasks by title or notes
+- **Sort** — Use the "Sort" dropdown to order by Date, Priority, or Name
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Changing Categories
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Edit the `CATEGORIES` array in `src/App.js`:
 
-## Learn More
+```javascript
+const CATEGORIES = ["Work", "Personal", "Health", "Learning", "Finance"];
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Changing Category Colors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Edit the `CAT_COLORS` object in `src/App.js`:
 
-### Code Splitting
+```javascript
+const CAT_COLORS = {
+  Work: "#7ab4e0",
+  Personal: "#c47ae0",
+  Health: "#7ec9a0",
+  Learning: "#e0b47a",
+  Finance: "#e07a7a",
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Modifying Seed Data
 
-### Analyzing the Bundle Size
+Replace or extend the `SEED_TASKS` array in `src/App.js` with your own initial tasks.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Theme Adjustments
 
-### Making a Progressive Web App
+All design tokens are CSS custom properties defined in the `css` template string at the top of `src/App.js`. Modify `--bg`, `--accent`, `--surface`, etc., to change the look and feel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is open source and available under the [MIT License](LICENSE).
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Built with React and attention to detail.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
